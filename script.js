@@ -1,11 +1,26 @@
 const bmiForm = document.getElementById("bmiForm");
 const heightInput = document.getElementById("height");
+const heightUnit = document.getElementById("heightUnit");
 const weightInput = document.getElementById("weight");
 
 const result = document.getElementById("result");
 const bmiValue = document.getElementById("bmiValue");
 const category = document.getElementById("category");
 const errorMessage = document.getElementById("errorMessage");
+
+function convertHeightToMeters(height, unit) {
+    switch (unit) {
+        case "m":
+            return height;
+        case "ft":
+            return height * 0.3048;
+        case "in":
+            return height * 0.0254;
+        case "cm":
+        default:
+            return height / 100;
+    }
+}
 
 bmiForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -29,8 +44,7 @@ bmiForm.addEventListener("submit", function (event) {
 
     errorMessage.textContent = "";
 
-    // Convert height from centimeters to meters
-    const heightInMeters = height / 100;
+    const heightInMeters = convertHeightToMeters(height, heightUnit.value);
 
     // BMI formula
     const bmi = weight / (heightInMeters * heightInMeters);
