@@ -49,6 +49,21 @@ body {
     }
 }
 
+.brand-mark {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+    color: #082f49;
+    font-size: 1.7rem;
+    font-weight: 800;
+    box-shadow: 0 12px 24px rgba(56, 189, 248, 0.35);
+}
+
 h1 {
     text-align: center;
     color: #f8fafc;
